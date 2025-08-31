@@ -868,6 +868,13 @@ begin
     NextTrack: ;
   end;
 
+  // If the last line in the txt is a linebreak, the song will have an empty sentence at the end - remove it
+  for TrackIndex := 0 to High(Tracks) do
+  begin
+    if (Tracks[TrackIndex].Lines[High(Tracks[TrackIndex].Lines)].Notes = nil) then
+      SetLength(Tracks[TrackIndex].Lines, Length(Tracks[TrackIndex].Lines) - 1);
+  end;
+
   Result := true;
 end;
 
