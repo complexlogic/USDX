@@ -745,8 +745,8 @@ NoDoubledResolution:
     SoftwareRendering := false;
 
   // define virtual (Render) and real (Screen) screen size
-  RenderW := 800;
-  RenderH := 600;
+  RenderW := 1920;
+  RenderH := 1080;
   ScreenW := ActualW;
   ScreenH := ActualH;
   // Ausganswerte für die State-Machine setzen

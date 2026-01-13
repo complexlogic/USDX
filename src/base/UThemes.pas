@@ -2680,11 +2680,11 @@ begin
 
   ThemeSelectS.Z := ReadFloat(SectionList, 'Z', 0);
 
-  ThemeSelectS.TextSize := ReadInteger(SectionList, 'TextSize', 30);
+  ThemeSelectS.TextSize := ReadInteger(SectionList, 'TextSize', 54);
 
   ThemeSelectS.SkipX := ReadInteger(SectionList, 'SkipX', 0);
 
-  ThemeSelectS.SBGW := ReadInteger(SectionList, 'SBGW', 400);
+  ThemeSelectS.SBGW := ReadInteger(SectionList, 'SBGW', 960);
 
   LoadColor(ThemeSelectS.ColR, ThemeSelectS.ColG,  ThemeSelectS.ColB, ReadString(SectionList, 'Color', ''));
   ThemeSelectS.Int :=  ReadFloat(SectionList, 'Int', 1);

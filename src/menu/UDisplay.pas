@@ -626,13 +626,13 @@ begin
         glVertex2f(DrawX, Cursor_Y);
 
         glTexCoord2f(0, 1);
-        glVertex2f(DrawX, Cursor_Y + 32);
+        glVertex2f(DrawX, Cursor_Y + 58);
 
         glTexCoord2f(1, 1);
-        glVertex2f(DrawX + 32, Cursor_Y + 32);
+        glVertex2f(DrawX + 58, Cursor_Y + 58);
 
         glTexCoord2f(1, 0);
-        glVertex2f(DrawX + 32, Cursor_Y);
+        glVertex2f(DrawX + 58, Cursor_Y);
       glEnd;
 
       glDisable(GL_BLEND);
@@ -807,17 +807,17 @@ begin
   glDisable(GL_TEXTURE_2D);
   glColor4f(1, 1, 1, 0.5);
   glBegin(GL_QUADS);
-    glVertex2f(690, 35);
-    glVertex2f(690, 0);
-    glVertex2f(800, 0);
-    glVertex2f(800, 35);
+    glVertex2f(1720, 65);
+    glVertex2f(1720, 0);
+    glVertex2f(RenderW, 0);
+    glVertex2f(RenderW, 65);
   glEnd;
   glDisable(GL_BLEND);
 
   // set font specs
   SetFontFamily(0);
   SetFontStyle(ftRegular);
-  SetFontSize(21);
+  SetFontSize(38);
   SetFontItalic(false);
   glColor4f(0, 0, 0, 1);
 
@@ -835,10 +835,10 @@ begin
   // draw text
 
   // fps
-  SetFontPos(695, 0);
+  SetFontPos(1732, 0);
   glPrint ('FPS: ' + InttoStr(LastFPS));
 
-  SetFontPos(695, 13);
+  SetFontPos(1732, 25);
   glColor4f(0.8, 0.5, 0.2, 1);
   glPrint ('Game.Debug');
 
@@ -902,7 +902,7 @@ var
   OldStretch: real;
 begin
   FontSize := 16.0;
-  W := 800.0;
+  W := RenderW;
   H := 400.0;
   ScrollPad := 5.0;
   ScrollW := 10.0;
@@ -921,8 +921,8 @@ begin
 
   // scale sizes to DPI/aspect
   ScaleF := (1.0*ScreenH)/(1.0*ScreenW);
-  FontSize := FontSize * 600.0/(1.0*ScreenH);
-  ScrollW := ScrollW * 800.0/(1.0*ScreenW);
+  FontSize := FontSize * RenderH/(1.0*ScreenH);
+  ScrollW := ScrollW * RenderW/(1.0*ScreenW);
   ScrollPad := ScrollPad * ScaleF;
 
   // set font specs
@@ -934,7 +934,7 @@ begin
   glColor4f(1, 1, 1, 1);
 
   OldStretch := Fonts[CurrentFont.FontFamily][CurrentFont.FontStyle].Font.Stretch;
-  Fonts[CurrentFont.FontFamily][CurrentFont.FontStyle].Font.Stretch := 1.4*ScaleF * Min(1.3, Max(0.8, power((1.0*ScreenW)/800.0, 1.2)));
+  Fonts[CurrentFont.FontFamily][CurrentFont.FontStyle].Font.Stretch := 1.4*ScaleF * Min(1.3, Max(0.8, power((1.0*ScreenW)/RenderW, 1.2)));
 
   // don't draw anything else if nothing's logged
   if Log.ConsoleCount < 1 then Exit;

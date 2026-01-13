@@ -148,8 +148,8 @@ begin
   ExitButton := Button[High(Button)];
   // lyric sample
   Lyrics := TLyricEngine.Create(
-      ExitButton.X + ExitButton.W + 5.0, ExitButton.Y - 10.0, 400.0, 40.0,
-      ExitButton.X + ExitButton.W + 5.0, ExitButton.Y + 20.0, 400.0, 40.0);
+      ExitButton.X + ExitButton.W + 12.0, ExitButton.Y - 18.0, 960.0, 72.0,
+      ExitButton.X + ExitButton.W + 12.0, ExitButton.Y + 36.0, 960.0, 72.0);
 
   //Line.Lyric := 'Lorem ipsum dolor sit amet';
   // 1st line

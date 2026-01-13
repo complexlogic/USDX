@@ -1391,7 +1391,7 @@ end;
 function TScreenSong.ParseMouse(MouseButton: integer; BtnDown: boolean; X, Y: integer): boolean;
 begin
 
-  // transfer mousecords to the 800x600 raster we use to draw
+  // transfer mousecords to the 1920x1080 raster we use to draw
   X := Round((X / (ScreenW / Screens)) * RenderW);
   if (X > RenderW) then
     X := X - RenderW;
@@ -2676,7 +2676,7 @@ begin
     begin
       Button[B].X := Theme.Song.Cover.X + (Count - SongCurrent) * (Theme.Song.Cover.W + Theme.Song.Cover.Padding);
 
-      if (Button[B].X < -Theme.Song.Cover.W) or (Button[B].X > 800) then
+      if (Button[B].X < -Theme.Song.Cover.W) or (Button[B].X > RenderW) then
       begin
         UnloadCover(B);
         Button[B].Visible := false;
@@ -2789,7 +2789,7 @@ begin
       else
         Button[B].X := Theme.Song.Cover.X + (Count - SongCurrent) * Theme.Song.Cover.W - (Count - SongCurrent) * (Theme.Song.Cover.W * Scale - Theme.Song.Cover.Padding);
 
-      if (Button[B].X < -Theme.Song.Cover.W) or (Button[B].X > 800) then
+      if (Button[B].X < -Theme.Song.Cover.W) or (Button[B].X > RenderW) then
       begin
         UnloadCover(B);
       end
@@ -2852,7 +2852,7 @@ begin
         end;
       end;
 
-      if (Button[B].X < -Button[B].W) or (Button[B].X > 800) then
+      if (Button[B].X < -Button[B].W) or (Button[B].X > RenderW) then
       begin
         Button[B].Visible := false;
       end

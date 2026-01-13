@@ -388,7 +388,7 @@ end;
 
 constructor TText.Create(X, Y: real; const Text: UTF8String);
 begin
-  Create(X, Y, 0, 0, 0, ftRegular, 30, 0, 0, 0, 0, Text, false, 0, 0, false);
+  Create(X, Y, 0, 0, 0, ftRegular, 54, 0, 0, 0, 0, Text, false, 0, 0, false);
 end;
 
 constructor TText.Create(ParX, ParY, ParW, ParH: real;

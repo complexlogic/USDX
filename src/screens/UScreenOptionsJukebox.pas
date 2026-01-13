@@ -147,15 +147,15 @@ begin
   self.SelectG := SelectG;
   self.SelectB := SelectB;
 
-  StaticR := CreateStatic(360, SelectR.Y + 3, 340, 10, 1, 1, 0, 0, Skin.GetTextureFileName('Picker'));
-  StaticG := CreateStatic(360, SelectG.Y + 3, 340, 10, 1, 0, 1, 0, Skin.GetTextureFileName('Picker'));
-  StaticB := CreateStatic(360, SelectB.Y + 3, 340, 10, 1, 0, 0, 1, Skin.GetTextureFileName('Picker'));
-  PointerR := CreateStatic(StaticR.Texture.X, StaticR.Texture.Y - 1, 1, 12, 1, 0, 0, 0, Skin.GetTextureFileName('Picker'));
-  PointerG := CreateStatic(StaticG.Texture.X, StaticG.Texture.Y - 1, 1, 12, 1, 0, 0, 0, Skin.GetTextureFileName('Picker'));
-  PointerB := CreateStatic(StaticB.Texture.X, StaticB.Texture.Y - 1, 1, 12, 1, 0, 0, 0, Skin.GetTextureFileName('Picker'));
+  StaticR := CreateStatic(864, SelectR.Y + 5, 816, 18, 1, 1, 0, 0, Skin.GetTextureFileName('Picker'));
+  StaticG := CreateStatic(864, SelectG.Y + 5, 816, 18, 1, 0, 1, 0, Skin.GetTextureFileName('Picker'));
+  StaticB := CreateStatic(864, SelectB.Y + 5, 816, 18, 1, 0, 0, 1, Skin.GetTextureFileName('Picker'));
+  PointerR := CreateStatic(StaticR.Texture.X, StaticR.Texture.Y - 2, 2, 22, 1, 0, 0, 0, Skin.GetTextureFileName('Picker'));
+  PointerG := CreateStatic(StaticG.Texture.X, StaticG.Texture.Y - 2, 2, 22, 1, 0, 0, 0, Skin.GetTextureFileName('Picker'));
+  PointerB := CreateStatic(StaticB.Texture.X, StaticB.Texture.Y - 2, 2, 22, 1, 0, 0, 0, Skin.GetTextureFileName('Picker'));
 
 
-  Sample := CreateStatic(PosX, PosY, 145, 55, 1, 1, 1, 1, Skin.GetTextureFileName('Picker'));
+  Sample := CreateStatic(PosX, PosY, 348, 99, 1, 1, 1, 1, Skin.GetTextureFileName('Picker'));
 
   RGBSalt := StaticR.Texture.W/255;
   X := PosX;
@@ -186,11 +186,11 @@ var
   StaticX: real;
 begin
   Sample.Texture.X := PosX;
-  SelectX := PosX + 150;
+  SelectX := PosX + 360;
   SelectR.X := SelectX;
   SelectG.X := SelectX;
   SelectB.X := SelectX;
-  StaticX := PosX + 290;
+  StaticX := PosX + 696;
   StaticR.Texture.X := StaticX;
   StaticG.Texture.X := StaticX;
   StaticB.Texture.X := StaticX;
@@ -210,12 +210,12 @@ begin
   SelectR.Y := PosY;
   SelectG.Y := SelectR.Y + SelectR.H + Theme.OptionsSub.WidgetVSpacing;
   SelectB.Y := SelectG.Y + SelectG.H + Theme.OptionsSub.WidgetVSpacing;
-  StaticR.Texture.Y := SelectR.Y + 3;
-  StaticG.Texture.Y := SelectG.Y + 3;
-  StaticB.Texture.Y := SelectB.Y + 3;
-  PointerR.Texture.Y := StaticR.Texture.Y - 1;
-  PointerG.Texture.Y := StaticG.Texture.Y - 1;
-  PointerB.Texture.Y := StaticB.Texture.Y - 1;
+  StaticR.Texture.Y := SelectR.Y + 5;
+  StaticG.Texture.Y := SelectG.Y + 5;
+  StaticB.Texture.Y := SelectB.Y + 5;
+  PointerR.Texture.Y := StaticR.Texture.Y - 2;
+  PointerG.Texture.Y := StaticG.Texture.Y - 2;
+  PointerB.Texture.Y := StaticB.Texture.Y - 2;
 
 end;
 
@@ -652,8 +652,8 @@ begin
   // lyric sample
   ButtonExit := Button[High(Button)];
   Lyrics := TLyricEngine.Create(
-      ButtonExit.X + ButtonExit.W + 20, ButtonExit.Y - 5 , 400, 40,
-      ButtonExit.X + ButtonExit.W + 20, ButtonExit.Y + 25, 400, 40);
+      ButtonExit.X + ButtonExit.W + 48, ButtonExit.Y - 9 , 960, 72,
+      ButtonExit.X + ButtonExit.W + 48, ButtonExit.Y + 45, 960, 72);
 
   //Line.Lyric := 'Lorem ipsum dolor sit amet';
   // 1st line
@@ -781,11 +781,11 @@ begin
   ThemeSelect := Theme.OptionsSub.SelectS;
   with ThemeSelect do
   begin
-    X := 220;
+    X := 528;
     Y := YNextWidget;
-    W := 100;
-    H := 15;
-    TextSize := 16;
+    W := 240;
+    H := 27;
+    TextSize := 28;
   end;
   ThemeSelect.Text := Language.Translate(Text);
   Result := AddSelectSlide(ThemeSelect, Data, Values);
@@ -802,7 +802,7 @@ begin
   RedSelect := AddColorPickerSelectSlide('JUKEBOX_SONGOPTIONS_LYRIC_RGB_RED', Red, IRed);
   GreenSelect := AddColorPickerSelectSlide('JUKEBOX_SONGOPTIONS_LYRIC_RGB_GREEN', Green, IGreen);
   BlueSelect := AddColorPickerSelectSlide('JUKEBOX_SONGOPTIONS_LYRIC_RGB_BLUE', Blue, IBlue);
-  ColorPicker := TLyricsColorPicker.Create(70, SelectsS[RedSelect].Y, SelectsS[RedSelect], SelectsS[GreenSelect], SelectsS[BlueSelect], Red, Green, Blue);
+  ColorPicker := TLyricsColorPicker.Create(168, SelectsS[RedSelect].Y, SelectsS[RedSelect], SelectsS[GreenSelect], SelectsS[BlueSelect], Red, Green, Blue);
   NumWidgets := Length(Widgets);
   SetLength(Widgets, NumWidgets + 1);
   Widgets[NumWidgets] := ColorPicker;

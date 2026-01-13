@@ -535,9 +535,9 @@ begin
     glEnable(GL_BLEND);
     glBegin(GL_QUADS);
       glVertex2f(  0,   0);
-      glVertex2f(  0, 600);
-      glVertex2f(800, 600);
-      glVertex2f(800,   0);
+      glVertex2f(  0, RenderH);
+      glVertex2f(RenderW, RenderH);
+      glVertex2f(RenderW,   0);
     glEnd;
     glDisable(GL_BLEND);
   end;
@@ -676,9 +676,9 @@ begin
     glEnable(GL_BLEND);
     glBegin(GL_QUADS);
       glVertex2f(  0,   0);
-      glVertex2f(  0, 600);
-      glVertex2f(800, 600);
-      glVertex2f(800,   0);
+      glVertex2f(  0, RenderH);
+      glVertex2f(RenderW, RenderH);
+      glVertex2f(RenderW,   0);
     glEnd;
     glDisable(GL_BLEND);
   end;
@@ -694,9 +694,9 @@ begin
   glBindTexture(GL_TEXTURE_2D, credits_bg_tex.TexNum);
   glBegin(Gl_Quads);
     glTexCoord2f(       0,        0); glVertex2f(      0,       0);
-    glTexCoord2f(       0, 600/1024); glVertex2f(      0, RenderH);
-    glTexCoord2f(800/1024, 600/1024); glVertex2f(RenderW, RenderH);
-    glTexCoord2f(800/1024,        0); glVertex2f(RenderW,       0);
+    glTexCoord2f(       0, RenderH/1024); glVertex2f(      0, RenderH);
+    glTexCoord2f(RenderW/1024, RenderH/1024); glVertex2f(RenderW, RenderH);
+    glTexCoord2f(RenderW/1024,        0); glVertex2f(RenderW,       0);
   glEnd;
   glDisable(GL_TEXTURE_2D);
   glDisable(GL_BLEND);
@@ -714,7 +714,7 @@ begin
   if (CTime = Main_Start) then
   begin
     // set position of text
-    Credits_X          := 600;
+    Credits_X          := RenderH;
     CurrentScrollStart := 1;
     CurrentScrollEnd   := 1;
   end;
@@ -753,7 +753,7 @@ begin
 
     visibleText := Copy(Funky_Text, CurrentScrollStart, CurrentScrollEnd);
 
-    if (Credits_X + glTextWidth(visibleText) < 600) and
+    if (Credits_X + glTextWidth(visibleText) < RenderH) and
        (CurrentScrollEnd < length(Funky_Text)) then
     begin
       inc(CurrentScrollEnd);
@@ -847,10 +847,10 @@ begin
   glColor4f(1, 1, 1, 1);
   glBindTexture(GL_TEXTURE_2D, credits_bg_ovl.TexNum);
   glBegin(gl_Quads);
-    glTexCoord2f(      0,        0); glVertex2f(800-393,   0);
-    glTexCoord2f(      0, 600/1024); glVertex2f(800-393, 600);
-    glTexCoord2f(393/512, 600/1024); glVertex2f(800,     600);
-    glTexCoord2f(393/512,        0); glVertex2f(800,       0);
+    glTexCoord2f(      0,        0); glVertex2f(RenderW-393,   0);
+    glTexCoord2f(      0, RenderH/1024); glVertex2f(RenderW-393, RenderH);
+    glTexCoord2f(393/512, RenderH/1024); glVertex2f(RenderW,     RenderH);
+    glTexCoord2f(393/512,        0); glVertex2f(RenderW,       0);
   glEnd;
 
 
@@ -918,9 +918,9 @@ begin
   glBindTexture(GL_TEXTURE_2D, outro_bg.TexNum);
   glBegin(gl_quads);
     glTexCoord2f(       0,        0); glVertex2f(  0,   0);
-    glTexCoord2f(       0, 600/1024); glVertex2f(  0, 600);
-    glTexCoord2f(800/1024, 600/1024); glVertex2f(800, 600);
-    glTexCoord2f(800/1024,        0); glVertex2f(800,   0);
+    glTexCoord2f(       0, RenderH/1024); glVertex2f(  0, RenderH);
+    glTexCoord2f(RenderW/1024, RenderH/1024); glVertex2f(RenderW, RenderH);
+    glTexCoord2f(RenderW/1024,        0); glVertex2f(RenderW,   0);
   glEnd;
 
   // outro overlays
@@ -938,10 +938,10 @@ begin
     glColor4f(1, 1, 1, 1);
     glBindTexture(GL_TEXTURE_2D, outro_exd.TexNum);
     glBegin(Gl_Quads);
-      glTexCoord2f(      0,       0); glVertex2f(800-310, 600-247);
-      glTexCoord2f(      0, 247/256); glVertex2f(800-310, 600    );
-      glTexCoord2f(310/512, 247/256); glVertex2f(800,     600    );
-      glTexCoord2f(310/512,       0); glVertex2f(800,     600-247);
+      glTexCoord2f(      0,       0); glVertex2f(RenderW-310, RenderH-247);
+      glTexCoord2f(      0, 247/256); glVertex2f(RenderW-310, RenderH    );
+      glTexCoord2f(310/512, 247/256); glVertex2f(RenderW,     RenderH    );
+      glTexCoord2f(310/512,       0); glVertex2f(RenderW,     RenderH-247);
     glEnd;
   end;
 

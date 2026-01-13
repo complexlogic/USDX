@@ -1869,7 +1869,7 @@ begin
     Result:=ParseInput(SDLK_ESCAPE, 0, true);
   end;
 
-  // transfer mousecords to the 800x600 raster we use to draw
+  // transfer mousecords to the 1920x1080 raster we use to draw
   X := Round((X / (ScreenW / Screens)) * RenderW);
   if (X > RenderW) then
     X := X - RenderW;
@@ -2173,7 +2173,7 @@ begin
   ThemeButtonBack := Theme.OptionsSub.ButtonBack;
   ThemeButtonBack.Y := Round(ScrollArea.Y + ScrollArea.H + Theme.OptionsSub.ButtonBackVSpacing);
   AddButton(ThemeButtonBack);
-  AddButtonText(20, 3, Theme.Options.Description[OPTIONS_DESC_INDEX_BACK]);
+  AddButtonText(48, 5, Theme.Options.Description[OPTIONS_DESC_INDEX_BACK]);
   Interaction := 0;
 
 end;

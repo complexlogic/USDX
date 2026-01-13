@@ -315,11 +315,11 @@ begin
     glBegin(GL_QUADS);
 
       glTexCoord2f(0, 0);
-      glVertex2f(800,  0);
+      glVertex2f(RenderW,  0);
       glTexCoord2f(0, Webcam.TextureCam.TexH);
-      glVertex2f(800,  600);
+      glVertex2f(RenderW,  RenderH);
       glTexCoord2f( Webcam.TextureCam.TexW, Webcam.TextureCam.TexH);
-      glVertex2f(0, 600);
+      glVertex2f(0, RenderH);
       glTexCoord2f( Webcam.TextureCam.TexW, 0);
       glVertex2f(0, 0);
 

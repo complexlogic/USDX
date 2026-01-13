@@ -478,7 +478,7 @@ var
 begin
   Result := inherited ParseMouse(MouseButton, BtnDown, X, Y);
 
-  // transfer mousecords to the 800x600 raster we use to draw
+  // transfer mousecords to the 1920x1080 raster we use to draw
   X := Min(RenderW, Round((X / (ScreenW / Screens)) * RenderW));
   Y := Round((Y / ScreenH) * RenderH);
 

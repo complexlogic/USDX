@@ -336,7 +336,7 @@ begin
   X1 := 0;
   Y1 := 0;
   H := Y + 1;
-  W := 800;
+  W := RenderW;
 
   glColor4f(0, 0, 0, 1);
   glbegin(gl_quads);
@@ -348,9 +348,9 @@ begin
 
   // Bottom
   X1 := 0;
-  Y1 := 600;
+  Y1 := RenderH;
   H := Y + 1;
-  W := 800;
+  W := RenderW;
 
   glColor4f(0, 0, 0, 1);
   glbegin(gl_quads);
@@ -363,7 +363,7 @@ begin
   // Left
   X1 := 0;
   Y1 := 0;
-  H := 600;
+  H := RenderH;
   W := X + 1;
 
   glColor4f(0, 0, 0, 1);
@@ -375,9 +375,9 @@ begin
   glEnd;
 
   // Right
-  X1 := 800;
+  X1 := RenderW;
   Y1 := 0;
-  H := 600;
+  H := RenderH;
   W := X + 1;
 
   glColor4f(0, 0, 0, 1);
@@ -741,7 +741,7 @@ begin
   if (High(JukeboxVisibleSongs) < 9) then
     Max := High(JukeboxVisibleSongs);
 
-  // transfer mousecords to the 800x600 raster we use to draw
+  // transfer mousecords to the 1920x1080 raster we use to draw
   X := Round((X / (ScreenW / Screens)) * RenderW);
   if (X > RenderW) then
     X := X - RenderW;

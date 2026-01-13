@@ -125,9 +125,9 @@ const
   PeakDecay = 0.2; // strength of peak-decay (reduction after one sec)
 
 const
-  BarHeight  = 11.0; // height of each bar (volume/vu-meter/pitch)
+  BarHeight  = 20.0; // height of each bar (volume/vu-meter/pitch)
   BarUpperSpacing = 1.0;  // spacing between a bar-area and the previous widget
-  BarLowerSpacing = 7.0;  // spacing between a bar-area and the next widget
+  BarLowerSpacing = 13.0;  // spacing between a bar-area and the next widget
   SourceBarsTotalHeight = BarHeight + BarUpperSpacing + BarLowerSpacing;
   ChannelBarsTotalHeight = 2*BarHeight + BarUpperSpacing + BarLowerSpacing;
 
@@ -233,8 +233,8 @@ var
   Delta: single;
   VolBarInnerWidth: integer;
 const
-  VolBarInnerHSpacing = 2;
-  VolBarInnerVSpacing = 1;
+  VolBarInnerHSpacing = 5;
+  VolBarInnerVSpacing = 2;
 begin
   // coordinates for black rect
   x1 := PosX;
@@ -292,7 +292,7 @@ begin
     end;
 
     x1 := PosX + VolBarInnerHSpacing + VolBarInnerWidth * PeakVolume;
-    x2 := x1 + 2;
+    x2 := x1 + 5;
 
     // draw peak
     glColor3f(0.8, 0.8, 0.8);
@@ -325,8 +325,8 @@ var
   ToneStringMaxWidth: real;
   ToneStringCenterXOffset: real;
 const
-  PitchBarInnerHSpacing = 2;
-  PitchBarInnerVSpacing = 1;
+  PitchBarInnerHSpacing = 5;
+  PitchBarInnerVSpacing = 2;
 begin
   // calc tone pitch
   ScreenOptionsRecord.PreviewChannel.AnalyzeBuffer();
