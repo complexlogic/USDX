@@ -770,8 +770,8 @@ NoDoubledResolution:
   end;
 
   // define virtual (Render) and real (Screen) screen size
-  RenderW := 800;
-  RenderH := 600;
+  RenderW := 1920;
+  RenderH := 1080;
   ScreenW := ActualW;
   ScreenH := ActualH;
   CalculateScreenMetrics;

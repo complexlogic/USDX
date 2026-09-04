@@ -75,7 +75,7 @@ type
 const
   CHANNEL_OFF = 0;         // for field ChannelToPlayerMap
   LATENCY_AUTODETECT = -1; // for field Latency
-  DEFAULT_RESOLUTION = '800x600';
+  DEFAULT_RESOLUTION = '1920x1080';
   DEFAULT_THEME = 'Modern';
   DEFAULT_HIGH_SCORE_SCREEN_ENTRIES = 5;
   MIN_HIGH_SCORE_SCREEN_ENTRIES = 5;
@@ -1429,7 +1429,7 @@ begin
 
   if (Length(IResolution) = 0) or (Resolution < 0) then
   begin
-    // if no modes were set, then failback to DEFAULT_RESOLUTION (800x600)
+    // if no modes were set, then failback to DEFAULT_RESOLUTION (1920x1080)
     // as per http://sourceforge.net/forum/message.php?msg_id=4544965
     // THANKS : linnex at users.sourceforge.net
     SetLength(IResolution, Length(IResolution) + 1);

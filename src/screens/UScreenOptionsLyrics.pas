@@ -176,8 +176,8 @@ begin
 
   // lyric sample engine 1
   LyricEngine[0] := TLyricEngine.Create(
-      80, 350, 640, 40,
-      80, 390, 640, 40);
+      192, 630, 1536, 72,
+      192, 702, 1536, 72);
 
   // build German line data
   SetLength(GermanLine.Notes, Length(LyricsGerman));
@@ -204,8 +204,8 @@ begin
 
   // lyric sample engine 2
   LyricEngine[1] := TLyricEngine.Create(
-      80, 450, 640, 40,
-      80, 490, 640, 40);
+      192, 810, 1536, 72,
+      192, 882, 1536, 72);
 
   // build Spanish line data
   SetLength(SpanishLine.Notes, Length(LyricsSpanish));

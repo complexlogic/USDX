@@ -631,8 +631,8 @@ begin
       begin
         X := DrawX;
         Y := Cursor_Y;
-        W := 32;
-        H := 32;
+        W := 58;
+        H := 58;
       end;
       Texture.Alpha := Alpha;
       Renderer.DepthTest := false;
@@ -789,12 +789,12 @@ var
 begin
   Renderer.DepthTest := false;
   // Some White Background for information
-  Renderer.DrawQuad(690, 0, 0, 110, 35, 1, 1, 1, 0.5);
+  Renderer.DrawQuad(1720, 0, 0, 200, 65, 1, 1, 1, 0.5);
 
   // set font specs
   SetFontFamily(0);
   SetFontStyle(ftRegular);
-  SetFontSize(21);
+  SetFontSize(38);
   SetFontItalic(false);
   SetFontColor(0, 0, 0, 1);
 
@@ -812,13 +812,12 @@ begin
   // draw text
 
   // fps
-  SetFontPos(695, 0);
-  PrintText ('FPS: ' + InttoStr(LastFPS));
+  SetFontPos(1732, 0);
+  PrintText('FPS: ' + InttoStr(LastFPS));
 
-  SetFontPos(695, 13);
+  SetFontPos(1732, 25);
   SetFontColor(0.8, 0.5, 0.2, 1);
-  PrintText ('Game.Debug');
-  Renderer.DepthTest := true;
+  PrintText('Game.Debug');
 end;
 
 end.

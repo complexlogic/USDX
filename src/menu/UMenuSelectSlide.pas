@@ -271,7 +271,7 @@ begin
   self.TextureSBG.H := H;
 
   self.Text.Text := Caption;
-  self.Text.Size := 30;
+  self.Text.Size := 54;
   self.Text.Visible := true;
   self.TColR := TColR;
   self.TColG := TColG;
@@ -521,11 +521,11 @@ end;
 procedure TSelectSlide.SetX(PosX: single);
 begin
   Texture.X := PosX;
-  self.Tex_SelectS_ArrowL.X := PosX + Texture.W + SkipX;
-  self.Tex_SelectS_ArrowR.X := PosX + Texture.W + SkipX + SBGW - self.Tex_SelectS_ArrowR.W;
+  self.Tex_SelectS_ArrowL.X := PosX + Texture.W + SkipX + 6;
+  self.Tex_SelectS_ArrowR.X := PosX + Texture.W + SkipX + SBGW - self.Tex_SelectS_ArrowR.W - 6;
 
   TextureSBG.X := PosX + Texture.W + SkipX;
-  Text.X := PosX + 20;
+  Text.X := PosX + 48;
   self.PosX := PosX;
 end;
 
@@ -754,7 +754,7 @@ begin
   // default: press return on click 
   Result := maReturn;
   // use left sides to inc or dec selection by click
-  AreaW := self.Tex_SelectS_ArrowL.W;
+  AreaW := self.Tex_SelectS_ArrowL.W + 12;
 
   if ClickSelectsPosition and (Length(TextOptT) > 0) and (TextureSBG.W > 0) then
   begin

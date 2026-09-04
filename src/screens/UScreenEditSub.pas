@@ -2884,7 +2884,7 @@ var
   CursorWordIndex: Integer;
   CursorCharIndex: Integer;
 begin
-  // transfer mousecords to the 800x600 raster we use to draw
+  // transfer mousecords to the 1920x1080 raster we use to draw
   X := Round((X / (ScreenW / Screens)) * RenderW);
   if (X > RenderW) then
     X := X - RenderW;
