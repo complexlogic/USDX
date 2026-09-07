@@ -934,6 +934,7 @@ end;
 constructor TScalableFont.Create(Font: TFont; UseMipmaps: boolean);
 var
   MipmapLevel: integer;
+  Scale: single;
 begin
   inherited Create(Font.Filename);
   
@@ -947,7 +948,8 @@ begin
   begin
     for MipmapLevel := 1 to cMaxMipmapLevel do
     begin
-      fMipmapFonts[MipmapLevel] := CreateMipmap(MipmapLevel, 1/(1 shl MipmapLevel));
+      Scale := Max(ScreenWPerScreen / RenderW, ScreenH / RenderH);
+      fMipmapFonts[MipmapLevel] := CreateMipmap(MipmapLevel, Scale/(1 shl MipmapLevel));
       // stop if no smaller mipmap font is returned
       if (fMipmapFonts[MipmapLevel] = nil) then
         Break;
