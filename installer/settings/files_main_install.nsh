@@ -140,7 +140,11 @@ Delete "$INSTDIR\libjpeg-8.dll"
 IfFileExists "$INSTDIR\libfreetype-6.dll" 0 +2
 Delete "$INSTDIR\libfreetype-6.dll"
 IfFileExists "$INSTDIR\libsharpyuv-0.dll" 0 +2
-Delete "$INSTDIR\libsharpyuv-0.dll.dll"
+Delete "$INSTDIR\libsharpyuv-0.dll"
+IfFileExists "$INSTDIR\libpng16-16.dll" 0 +2
+Delete "$INSTDIR\libpng16-16.dll"
+IfFileExists "$INSTDIR\portaudio_x64.dll" 0 +2
+Delete "$INSTDIR\portaudio_x64.dll"
 IfFileExists $INSTDIR\avcodec-62.dll 0 +2
 Delete "$INSTDIR\avcodec-62.dll"
 IfFileExists $INSTDIR\avformat-62.dll 0 +2
