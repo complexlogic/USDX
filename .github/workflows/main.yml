@@ -3,7 +3,7 @@ name: Build
 on:
   push:
     branches:
-      - master
+      - dll-update
   pull_request:
   # Run every day at 5:40.
   schedule:
